@@ -42,7 +42,7 @@ zarf package deploy --confirm zarf-package-big-bang-*.tar.zst
 # (Alternatively) Deploy from OCI
 # Login to the registry
 # Run the zarf package deploy command with the desired DUBBD OCI package reference 
-zarf package deploy oci://ghcr.io/defenseunicorns/packages/big-bang-distro-kind/big-bang-distro-kind:0.0.2-amd64 --oci-concurrency=15
+zarf package deploy oci://ghcr.io/corang/big-bang-distro-kind:2.2.0-amd64 --oci-concurrency=15
 ```
 
 ## Additional Information
