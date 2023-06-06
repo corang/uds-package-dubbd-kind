@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
+kind: ZarfPackageConfig
+metadata:
+  name: big-bang-distro-kind
+  description: "Defense Unicorns Big Bang Distro"
+  version: "###ZARF_PKG_TMPL_BIGBANG_VERSION###"
+  url: https://p1.dso.mil/products/big-bang
+  image: https://p1.dso.mil/img/Big_Bang_Color_Logo_White_text.de14c793.webp
+  # Big Bang / Iron Bank are only amd64
+  architecture: amd64
+  authors: "@corang"
+  source: https://github.com/defenseunicorns/zarf-package-big-bang
+  documentation: https://github.com/defenseunicorns/zarf-package-big-bang
+  vendor: Defense Unicorns
+
+variables:
+- name: HOST_PATH
+  default: "/var/local-path-provisioner/*"
+  prompt: false
+
+components:
+  - name: load-certs
+    required: true
+    import:
+      name: load-certs
+      url: oci://ghcr.io/corang/big-bang:0.2.1-skeleton
+  - name: preflight
+    required: true
+    import:
+      name: preflight
+      url: oci://ghcr.io/corang/big-bang:0.2.1-skeleton
+  - name: download-flux
+    required: true
+    import:
+      name: download-flux
+      url: oci://ghcr.io/corang/big-bang:0.2.1-skeleton
+  - name: bigbang
+    required: true
+    import:
+      name: bigbang
+      url: oci://ghcr.io/corang/big-bang:0.2.1-skeleton
+    extensions:
+      bigbang:
+        version: "###ZARF_PKG_VAR_BIGBANG_VERSION###"
+        valuesFiles:
+        - values/local-dev.yaml
