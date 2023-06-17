@@ -27,4 +27,4 @@ jobs:
 
       # Installs yq
       - name: Install yq
-        uses: ./.github/actions/golang
+        uses: ./.github/actions/yq
