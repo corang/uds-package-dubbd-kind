@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Get current dubbd tag
-DUBBD_TAG=$(yq '.package.create.set.package_version' ${GITHUB_WORKSPACE}/zarf-config.yaml)
+DUBBD_TAG=$(yq '.package.create.set.package_version' ./zarf-config.yaml)
 
 # Store upstream zarf-config.yaml in variable
 UPSTREAM_ZARF_CONFIG=$(curl -s https://raw.githubusercontent.com/defenseunicorns/uds-package-dubbd/${DUBBD_TAG}/defense-unicorns-distro/zarf-config.yaml)
 
 # Get our bigbang version
-CURRENT_BB_VERSION=$(yq '.package.create.set.bigbang_version' ${GITHUB_WORKSPACE}./zarf-config.yaml)
+CURRENT_BB_VERSION=$(yq '.package.create.set.bigbang_version' ./zarf-config.yaml)
 
 # Get upstream bigbang version
 UPSTREAM_BB_VERSION=$(echo "${UPSTREAM_ZARF_CONFIG}" | yq '.package.create.set.bigbang_version')
