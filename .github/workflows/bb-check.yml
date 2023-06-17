@@ -37,6 +37,4 @@ jobs:
       - name: Check bigbang version
         run: |
           chmod +x ./test/scripts/bb-compare.sh
-          ./test/scripts./bb-compare.sh
-        
-          
+          ./test/scripts/bb-compare.sh
