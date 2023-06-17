@@ -3,6 +3,7 @@
   "extends": [
     "config:base"
   ],
+  "automerge": true,
   "prHourlyLimit": 0,
   "regexManagers": [
     {
