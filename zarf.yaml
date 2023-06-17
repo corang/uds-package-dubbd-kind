@@ -1,17 +1,17 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
 kind: ZarfPackageConfig
 metadata:
-  name: big-bang-distro-kind
-  description: "Defense Unicorns Big Bang Distro"
-  version: "###ZARF_PKG_TMPL_BIGBANG_VERSION###"
+  name: dubbd-kind
+  description: "Defense Unicorns Big Bang Distro for kind (https://kind.sigs.k8s.io/)"
+  version: "###ZARF_PKG_TMPL_PACKAGE_VERSION###"
   url: https://p1.dso.mil/products/big-bang
   image: https://p1.dso.mil/img/Big_Bang_Color_Logo_White_text.de14c793.webp
   # Big Bang / Iron Bank are only amd64
   architecture: amd64
   authors: "@corang"
-  source: https://github.com/defenseunicorns/zarf-package-big-bang
-  documentation: https://github.com/defenseunicorns/zarf-package-big-bang
-  vendor: Defense Unicorns
+  source: https://github.com/defenseunicorns/uds-package-dubbd
+  documentation: https://github.com/defenseunicorns/uds-package-dubbd
+  vendor: Jordan McClintock
 
 variables:
 - name: HOST_PATH
@@ -23,22 +23,22 @@ components:
     required: true
     import:
       name: load-certs
-      url: oci://ghcr.io/corang/big-bang:0.2.1-skeleton
+      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.4-skeleton
   - name: preflight
     required: true
     import:
       name: preflight
-      url: oci://ghcr.io/corang/big-bang:0.2.1-skeleton
+      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.4-skeleton
   - name: download-flux
     required: true
     import:
       name: download-flux
-      url: oci://ghcr.io/corang/big-bang:0.2.1-skeleton
+      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.4-skeleton
   - name: bigbang
     required: true
     import:
       name: bigbang
-      url: oci://ghcr.io/corang/big-bang:0.2.1-skeleton
+      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.4-skeleton
     extensions:
       bigbang:
         version: "###ZARF_PKG_VAR_BIGBANG_VERSION###"
