@@ -32,7 +32,8 @@
       "matchStrings": [
         "url:\\soci://(?<depName>.*):(?<currentValue>.*)"
       ],
-      "versioningTemplate": "docker"
+      "versioningTemplate": "docker",
+      "datasourceTemplate": "docker"
     }
   ]
 }
