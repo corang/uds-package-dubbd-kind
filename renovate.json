@@ -28,6 +28,34 @@
         "replacement"
       ],
       "groupName": "upstream-update"
+    },
+    {
+      "matchPackagePatterns": [
+        "actions",
+        "checkout",
+        "cache",
+        "supplypike",
+        "setup-bin",
+        "docker/login-action",
+        "login-action",
+        "actions/cache",
+        "actions/checkout",
+        "supplypike/setup-bin",
+        "docker/login-action"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "pinDigest",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump",
+        "replacement"
+      ],
+      "groupName": "ci-dep-update"
     }
   ],
   "regexManagers": [
