@@ -1,0 +1,49 @@
+name: build-and-publish
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-publish-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Init zarf cache
+        uses: actions/cache@v3
+        with:
+          path: "~/.zarf-cache"
+          key: zarf-cache
+
+      - name: Install zarf
+        uses: supplypike/setup-bin@v3
+        with:
+          uri: 'https://github.com/defenseunicorns/zarf/releases/download/v0.27.1/zarf_v0.27.1_Linux_amd64'
+          name: 'zarf'
+          version: 'v0.27.1'
+
+      - name: Login to GHCR
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Login to registry1
+        uses: docker/login-action@v2
+        with:
+          registry: registry1.dso.mil
+          username: ${{ secrets.REGISTRY1_USERNAME }}
+          password: ${{ secrets.REGISTRY1_PASSWORD }}
+
+      - name: Build dubbd-kind package
+        run: |
+          mkdir -p build
+          zarf package create --confirm --no-progress --output-directory build
+
+      - name: Publish dubbd-kind package
+        run: |
+          zarf package publish zarf-package-dubbd-kind-amd64-*.tar.zst oci://ghcr.io/corang
