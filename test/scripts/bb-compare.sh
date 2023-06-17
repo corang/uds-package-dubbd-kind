@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Get current dubbd tag
 DUBBD_TAG=$(yq '.package.create.set.package_version' ./zarf-config.yaml)
 
