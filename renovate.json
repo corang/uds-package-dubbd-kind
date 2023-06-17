@@ -28,6 +28,7 @@
       "datasourceTemplate": "github-tags"
     },
     {
+      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
       "matchStrings": [
         "url:\\soci://(?<depName>.*):(?<currentValue>.*)"
       ],
