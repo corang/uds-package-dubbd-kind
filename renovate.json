@@ -3,7 +3,6 @@
   "extends": [
     "config:base"
   ],
-  "automerge": true,
   "prHourlyLimit": 0,
   "packageRules": [
     {
@@ -16,18 +15,14 @@
         "defenseunicorns"
       ],
       "matchUpdateTypes": [
-        "major",
         "minor",
         "patch",
         "pin",
         "pinDigest",
-        "digest",
-        "lockFileMaintenance",
-        "rollback",
-        "bump",
-        "replacement"
+        "digest"
       ],
-      "groupName": "upstream-update"
+      "groupName": "upstream-update",
+      "automerge": true
     },
     {
       "matchPackagePatterns": [
