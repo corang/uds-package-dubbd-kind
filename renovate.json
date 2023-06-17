@@ -5,6 +5,31 @@
   ],
   "automerge": true,
   "prHourlyLimit": 0,
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "bigbang",
+        "uds-package-dubbd",
+        "dubbd",
+        "packages/dubbd",
+        "big-bang",
+        "defenseunicorns"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "pinDigest",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump",
+        "replacement"
+      ],
+      "groupName": "upstream-update"
+    }
+  ],
   "regexManagers": [
     {
       "fileMatch": ["(^|/|\\.).*\\.yaml$"],
