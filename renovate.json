@@ -26,6 +26,12 @@
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "datasourceTemplate": "github-tags"
+    },
+    {
+      "matchStrings": [
+        "url:\\soci://(?<depName>.*):(?<currentValue>.*)"
+      ],
+      "versioningTemplate": "docker"
     }
   ]
 }
