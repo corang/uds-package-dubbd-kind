@@ -30,7 +30,7 @@
     {
       "fileMatch": ["(^|/|\\.).*\\.yaml$"],
       "matchStrings": [
-        "url:\\soci://(?<depName>.*):(?<currentValue>.*)"
+        "url:\\soci://(?<depName>.*?):(?<currentValue>.*?)\\s"
       ],
       "versioningTemplate": "docker",
       "datasourceTemplate": "docker"
