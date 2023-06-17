@@ -29,6 +29,6 @@ jobs:
       - name: Install yq
         uses: supplypike/setup-bin@v3
         with:
-          uri: 'https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd'
+          uri: 'https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64'
           name: 'yq'
           version: 'latest'
