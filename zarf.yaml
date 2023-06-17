@@ -23,22 +23,22 @@ components:
     required: true
     import:
       name: load-certs
-      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.3-amd64
+      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.4-amd64
   - name: preflight
     required: true
     import:
       name: preflight
-      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.3-amd64
+      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.4-amd64
   - name: download-flux
     required: true
     import:
       name: download-flux
-      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.3-amd64
+      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.4-amd64
   - name: bigbang
     required: true
     import:
       name: bigbang
-      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.3-amd64
+      url: oci://ghcr.io/defenseunicorns/packages/dubbd:0.2.4-amd64
     extensions:
       bigbang:
         version: "###ZARF_PKG_VAR_BIGBANG_VERSION###"
