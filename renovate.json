@@ -5,14 +5,14 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["./.+\\.yaml$"],
+      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
       "matchStrings": [
         "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
       ],
       "datasourceTemplate": "helm"
     },
     {
-      "fileMatch": ["./.+\\.ya?ml$"],
+      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( registryUrl=(?<registryUrl>.*?))?\\s.*?_version:\\s*['\"](?<currentValue>.*)['\"]\\s"
       ],
@@ -20,7 +20,7 @@
       "datasourceTemplate": "gitlab-tags"
     },
     {
-      "fileMatch": ["./.+\\.ya?ml$"],
+      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
       "matchStrings": [
         "# renovate: datasource=gitlab-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( registryUrl=(?<registryUrl>.*?))?\\s.*?_version:\\s*['\"](?<currentValue>.*)['\"]\\s"
       ],
@@ -28,7 +28,7 @@
       "datasourceTemplate": "gitlab-tags"
     },
     {
-      "fileMatch": ["./.+\\.ya?ml$"],
+      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
       "matchStrings": [
         "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version:\\s*(?<currentValue>.*)\\s"
       ],
