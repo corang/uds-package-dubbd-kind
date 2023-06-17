@@ -46,4 +46,4 @@ jobs:
 
       - name: Publish dubbd-kind package
         run: |
-          zarf package publish build/zarf-package-dubbd-kind-amd64-*.tar.zst oci://ghcr.io/corang
+          zarf package publish build/zarf-package-dubbd-kind-amd64-*.tar.zst oci://ghcr.io/corang --no-progress
