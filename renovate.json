@@ -78,7 +78,7 @@
       "datasourceTemplate": "github-tags"
     },
     {
-      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
+      "fileMatch": ["(^|/|\\.).*\\.yml$"],
       "matchStrings": [
         "# renovate: zarf-uri datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?uri: ['\"]https:\\/\\/github.com\\/defenseunicorns\\/zarf\\/releases\\/download\\/(?<currentValue>.*)\\/zarf_.*_Linux_amd64['\"]"
       ],
@@ -86,7 +86,7 @@
       "datasourceTemplate": "github-tags"
     },
     {
-      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
+      "fileMatch": ["(^|/|\\.).*\\.yml$"],
       "matchStrings": [
         "# renovate: zarf-uri datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?uri: ['\"]https:\\/\\/github.com\\/defenseunicorns\\/zarf\\/releases\\/download\\/.*\\/zarf_(?<currentValue>.*)_Linux_amd64['\"]"
       ],
@@ -94,7 +94,7 @@
       "datasourceTemplate": "github-tags"
     },
     {
-      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
+      "fileMatch": ["(^|/|\\.).*\\.yml$"],
       "matchStrings": [
         "# renovate: zarf datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version:\\s*['\"](?<currentValue>.*)['\"]\\s"
       ],
