@@ -11,8 +11,7 @@
         "uds-package-dubbd",
         "dubbd",
         "packages/dubbd",
-        "big-bang",
-        "defenseunicorns"
+        "big-bang"
       ],
       "matchUpdateTypes": [
         "minor",
@@ -36,7 +35,8 @@
         "actions/cache",
         "actions/checkout",
         "supplypike/setup-bin",
-        "docker/login-action"
+        "docker/login-action",
+        "zarf"
       ],
       "matchUpdateTypes": [
         "major",
@@ -73,6 +73,30 @@
       "fileMatch": ["(^|/|\\.).*\\.yaml$"],
       "matchStrings": [
         "# renovate: datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version:\\s*['\"](?<currentValue>.*)['\"]\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
+      "matchStrings": [
+        "# renovate: zarf-uri datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?uri: ['\"]https:\\/\\/github.com\\/defenseunicorns\\/zarf\\/releases\\/download\\/(?<currentValue>.*)\\/zarf_.*_Linux_amd64['\"]"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
+      "matchStrings": [
+        "# renovate: zarf-uri datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?uri: ['\"]https:\\/\\/github.com\\/defenseunicorns\\/zarf\\/releases\\/download\\/.*\\/zarf_(?<currentValue>.*)_Linux_amd64['\"]"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["(^|/|\\.).*\\.yaml$"],
+      "matchStrings": [
+        "# renovate: zarf datasource=github-tags depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s.*?version:\\s*['\"](?<currentValue>.*)['\"]\\s"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "datasourceTemplate": "github-tags"
