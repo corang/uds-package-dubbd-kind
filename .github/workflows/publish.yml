@@ -48,7 +48,7 @@ jobs:
       - name: Build dubbd-kind package
         run: |
           mkdir -p build
-          zarf package create -l trace --confirm --no-progress --output-directory build
+          zarf package create --confirm --no-progress --output-directory build
 
       - name: Publish dubbd-kind package
         run: |
