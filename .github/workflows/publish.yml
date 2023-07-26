@@ -1,9 +1,5 @@
 name: build-and-publish
 
-concurrency:
-    cancel-in-progress: true
-    group: build-and-publish
-
 on:
   push:
     branches: [ "main" ]
