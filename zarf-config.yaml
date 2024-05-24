@@ -2,11 +2,11 @@ package:
   create: 
     set:
       # renovate: datasource=gitlab-tags depName=big-bang/bigbang versioning=semver registryUrl=https://repo1.dso.mil
-      bigbang_version: "2.26.0"
+      bigbang_version: "2.27.0"
       # should line up with the flux version in the BB release, see https://repo1.dso.mil/big-bang/bigbang/-/blob/master/base/flux/gotk-components.yaml#L3
       flux_version: "0.41.2"
       # renovate: datasource=github-tags depName=defenseunicorns/uds-package-dubbd versioning=semver-coerced
-      package_version: "v0.25.0"
+      package_version: "v0.26.0"
   deploy:
     set:
       domain: bigbang.dev
